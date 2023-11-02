@@ -61,7 +61,10 @@ public class PhoneBookTest {
 
         phoneBook.printAllNames();
         String consoleOutput = outputStream.toString().trim();
-        String expectedOutput = "Alexa Obrain\nJane Smith\nJohn Doe\nKaly Peterson";
+        String expectedOutput = "Alexa Obrain\n" +
+                "Jane Smith\n" +
+                "John Doe\n" +
+                "Kaly Peterson";
 
         assertEquals(expectedOutput, consoleOutput);
     }

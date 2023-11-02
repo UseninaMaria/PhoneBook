@@ -7,10 +7,12 @@ import java.util.TreeSet;
 public class PhoneBook {
     private Map<String, String> contacts;
     private Map<String, String> reverseContacts;
+    private TreeSet<String> names;
 
     public PhoneBook() {
         contacts = new HashMap<>();
         reverseContacts = new HashMap<>();
+        names = new TreeSet<>();
     }
 
     public int add(String name, String phoneNumber) {
@@ -19,6 +21,7 @@ public class PhoneBook {
         } else {
             contacts.put(name, phoneNumber);
             reverseContacts.put(phoneNumber, name);
+            names.add(name);
             return contacts.size();
         }
     }
@@ -31,7 +34,9 @@ public class PhoneBook {
         return contacts.getOrDefault(name, null);
     }
 
-    public TreeSet<String> printAllNames() {
-        return null;
+    public void printAllNames() {
+        for(String name: names) {
+            System.out.print(name+"\n");
+        }
     }
 }
