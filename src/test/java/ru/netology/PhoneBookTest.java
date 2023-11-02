@@ -2,6 +2,10 @@ package ru.netology;
 
 import org.junit.Test;
 
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
+import java.util.TreeSet;
+
 import static junit.framework.TestCase.assertEquals;
 
 public class PhoneBookTest {
@@ -42,5 +46,23 @@ public class PhoneBookTest {
 
         String numberContact1 = phoneBook.findByName("Jane Smith");
         assertEquals("0987654321", numberContact1);
+    }
+
+    @Test
+    public void printAllNames() {
+
+        phoneBook.add("John Doe", "1234567890");
+        phoneBook.add("Jane Smith", "0987654321");
+        phoneBook.add("Kaly Peterson", "1254125475");
+        phoneBook.add("Alexa Obrain", "132465798132");
+
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outputStream));
+
+        phoneBook.printAllNames();
+        String consoleOutput = outputStream.toString().trim();
+        String expectedOutput = "Alexa Obrain\nJane Smith\nJohn Doe\nKaly Peterson";
+
+        assertEquals(expectedOutput, consoleOutput);
     }
 }
