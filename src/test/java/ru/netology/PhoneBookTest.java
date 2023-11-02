@@ -27,6 +27,6 @@ public class PhoneBookTest {
         assertEquals("John Doe", nameContact);
 
         String nameContact1 = phoneBook.findByNumber( "0987654321");
-        assertEquals("Jane Smith", nameContact);
+        assertEquals("Jane Smith", nameContact1);
     }
 }
