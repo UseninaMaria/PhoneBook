@@ -40,7 +40,7 @@ public class PhoneBookTest {
         String numberContact = phoneBook.findByName("John Doe");
         assertEquals("1234567890", numberContact);
 
-        String numberContact1 = phoneBook.findByNumber("Jane Smith");
+        String numberContact1 = phoneBook.findByName("Jane Smith");
         assertEquals("0987654321", numberContact1);
     }
 }
